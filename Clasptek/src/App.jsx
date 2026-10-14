@@ -30,6 +30,9 @@ import {
   staggerContainer,
   useCountUp,
 } from './animations.js'
+import heroImage from './assets/hero-construction.png'
+import blueStoneImage from './assets/blue-stone-exterior.png'
+import ourStoryImage from './assets/our-story-home.png'
 import './App.css'
 
 const WHATSAPP_LINK = 'https://wa.me/2349025317736'
@@ -429,11 +432,10 @@ function App() {
       <main>
         <section className="hero-section" id="home" ref={heroRef}>
           <div className="hero-image-frame">
-            {/* REPLACE WITH REAL BLUE STONE PIC */}
             <img
               className="hero-image"
-              src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2400&q=90"
-              alt="Contemporary luxury residence framed by mature trees"
+              src={heroImage}
+              alt="Modern homes under construction"
               fetchPriority="high"
             />
           </div>
@@ -613,11 +615,10 @@ function App() {
 
         <section className="blue-stone-section" id="blue-stone">
           <div className="blue-stone-image">
-            {/* REPLACE WITH REAL BLUE STONE PIC */}
             <img
               className="story-image"
-              src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1600&q=85"
-              alt="Modern home with warm evening light"
+              src={blueStoneImage}
+              alt="Blue Stone home under construction"
               loading="lazy"
             />
             <div className="image-caption"><span>06° 48&apos; N</span><span>03° 26&apos; E</span></div>
@@ -687,11 +688,10 @@ function App() {
 
         <section className="process-section section-pad" id="about">
           <div className="process-image">
-            {/* REPLACE WITH REAL BLUE STONE PIC */}
             <img
               className="story-image"
-              src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1400&q=85"
-              alt="Architectural detail of a contemporary residence"
+              src={ourStoryImage}
+              alt="A CLASPTEK home under construction"
               loading="lazy"
             />
             <span className="process-image-label">CLASPTEK <i /> EST. 2020</span>
