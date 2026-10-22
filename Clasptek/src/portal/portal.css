@@ -1,0 +1,421 @@
+/* CLASPCONSTRUCTION tenant portal — black & gold design system (matches the public site) */
+
+.portal-shell {
+  min-height: 100vh;
+  background: var(--ink);
+  color: var(--warm-white);
+  padding-bottom: 4rem;
+}
+
+.portal-nav {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 0.9rem clamp(1rem, 4vw, 2.5rem);
+  background: rgba(10, 10, 10, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.18);
+}
+
+.portal-brand {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  letter-spacing: 0.04em;
+  color: var(--warm-white);
+  text-decoration: none;
+}
+
+.portal-brand span {
+  color: var(--gold);
+}
+
+.portal-links {
+  display: flex;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.portal-links a {
+  font-size: 0.85rem;
+  color: rgba(249, 246, 240, 0.72);
+  text-decoration: none;
+  padding: 0.45rem 0.7rem;
+  border-radius: 8px;
+  transition: color 0.2s, background 0.2s;
+  position: relative;
+}
+
+.portal-links a:hover {
+  color: var(--gold);
+  background: rgba(212, 175, 55, 0.08);
+}
+
+.portal-links a.active {
+  color: var(--ink);
+  background: var(--gold);
+}
+
+.portal-nav-right {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.portal-main {
+  width: min(1100px, 100% - 2rem);
+  margin: 0 auto;
+  padding-top: 2rem;
+}
+
+.portal-h1 {
+  font-family: var(--serif);
+  font-size: clamp(1.7rem, 3.4vw, 2.4rem);
+  margin: 0 0 0.35rem;
+}
+
+.portal-sub {
+  color: rgba(249, 246, 240, 0.6);
+  font-size: 0.95rem;
+  margin: 0 0 1.6rem;
+}
+
+.p-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.p-grid.cols-2 {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.p-grid.cols-3 {
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+}
+
+.p-card {
+  background: var(--soft-black);
+  border: 1px solid rgba(212, 175, 55, 0.16);
+  border-radius: 14px;
+  padding: 1.25rem;
+}
+
+.p-card.gold {
+  border-color: rgba(212, 175, 55, 0.5);
+  background: linear-gradient(160deg, rgba(212, 175, 55, 0.1), rgba(20, 20, 20, 0.9));
+}
+
+.p-card h3 {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  margin: 0 0 0.6rem;
+}
+
+.p-stat {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 600;
+  color: var(--gold);
+  line-height: 1.1;
+}
+
+.p-label {
+  display: block;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(249, 246, 240, 0.55);
+  margin-bottom: 0.35rem;
+}
+
+.p-input,
+.p-select,
+.p-textarea {
+  width: 100%;
+  background: #0f0f0f;
+  border: 1px solid #2b2b2b;
+  color: var(--warm-white);
+  border-radius: 10px;
+  padding: 0.7rem 0.9rem;
+  font: inherit;
+  font-size: 0.95rem;
+}
+
+.p-input:focus,
+.p-select:focus,
+.p-textarea:focus {
+  outline: none;
+  border-color: var(--gold);
+}
+
+.p-textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.p-field {
+  margin-bottom: 1rem;
+}
+
+.p-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: var(--gold);
+  color: var(--ink);
+  border: none;
+  border-radius: 999px;
+  padding: 0.7rem 1.5rem;
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.2s, filter 0.2s;
+}
+
+.p-btn:hover {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+}
+
+.p-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.p-btn.ghost {
+  background: transparent;
+  color: var(--gold);
+  border: 1px solid rgba(212, 175, 55, 0.45);
+}
+
+.p-btn.small {
+  padding: 0.4rem 0.9rem;
+  font-size: 0.8rem;
+}
+
+.p-btn.danger {
+  background: transparent;
+  color: #ff8a8a;
+  border: 1px solid rgba(255, 120, 120, 0.4);
+}
+
+.pill {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.22rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid;
+}
+
+.pill.success { color: #7ee2a8; border-color: rgba(126, 226, 168, 0.4); background: rgba(126, 226, 168, 0.08); }
+.pill.pending { color: var(--gold-light); border-color: rgba(212, 175, 55, 0.4); background: rgba(212, 175, 55, 0.08); }
+.pill.failed { color: #ff8a8a; border-color: rgba(255, 138, 138, 0.4); background: rgba(255, 138, 138, 0.08); }
+.pill.neutral { color: rgba(249, 246, 240, 0.7); border-color: #333; background: rgba(255, 255, 255, 0.04); }
+.pill.gold { color: var(--ink); border-color: var(--gold); background: var(--gold); }
+
+.p-table-wrap {
+  overflow-x: auto;
+  border: 1px solid rgba(212, 175, 55, 0.16);
+  border-radius: 14px;
+}
+
+.p-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+  min-width: 640px;
+}
+
+.p-table th {
+  text-align: left;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(249, 246, 240, 0.5);
+  padding: 0.8rem 1rem;
+  background: #101010;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.16);
+}
+
+.p-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #1e1e1e;
+  vertical-align: middle;
+}
+
+.p-table tr:last-child td {
+  border-bottom: none;
+}
+
+.p-error {
+  background: rgba(255, 138, 138, 0.08);
+  border: 1px solid rgba(255, 138, 138, 0.35);
+  color: #ffb3b3;
+  border-radius: 10px;
+  padding: 0.7rem 1rem;
+  font-size: 0.88rem;
+  margin-bottom: 1rem;
+}
+
+.p-success-box {
+  background: rgba(126, 226, 168, 0.08);
+  border: 1px solid rgba(126, 226, 168, 0.35);
+  color: #b8f3d1;
+  border-radius: 10px;
+  padding: 0.7rem 1rem;
+  font-size: 0.88rem;
+  margin-bottom: 1rem;
+}
+
+.p-muted {
+  color: rgba(249, 246, 240, 0.55);
+  font-size: 0.88rem;
+}
+
+.p-row {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.p-tabs {
+  display: flex;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.16);
+  padding-bottom: 0.75rem;
+}
+
+.p-tab {
+  background: transparent;
+  border: 1px solid #2b2b2b;
+  color: rgba(249, 246, 240, 0.7);
+  border-radius: 999px;
+  padding: 0.45rem 1rem;
+  font: inherit;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.p-tab:hover {
+  border-color: rgba(212, 175, 55, 0.5);
+  color: var(--gold);
+}
+
+.p-tab.active {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.p-notice {
+  border-left: 3px solid var(--gold);
+  padding-left: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.p-notice.unread {
+  background: rgba(212, 175, 55, 0.05);
+  border-radius: 0 12px 12px 0;
+  padding: 0.9rem 1rem 0.9rem 1rem;
+}
+
+.p-agenda {
+  list-style: none;
+  padding: 0;
+  margin: 0.6rem 0 0;
+}
+
+.p-agenda li {
+  padding: 0.3rem 0 0.3rem 1.2rem;
+  position: relative;
+  font-size: 0.9rem;
+  color: rgba(249, 246, 240, 0.8);
+}
+
+.p-agenda li::before {
+  content: '◆';
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-size: 0.6rem;
+  top: 0.55rem;
+}
+
+.p-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  z-index: 100;
+}
+
+.p-modal {
+  background: var(--soft-black);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: 16px;
+  padding: 1.5rem;
+  width: min(560px, 100%);
+  max-height: 85vh;
+  overflow-y: auto;
+}
+
+.p-spinner {
+  width: 22px;
+  height: 22px;
+  border: 2px solid rgba(212, 175, 55, 0.25);
+  border-top-color: var(--gold);
+  border-radius: 50%;
+  animation: p-spin 0.8s linear infinite;
+  margin: 2rem auto;
+}
+
+@keyframes p-spin {
+  to { transform: rotate(360deg); }
+}
+
+.p-receipt-line {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.55rem 0;
+  border-bottom: 1px dashed #2b2b2b;
+  font-size: 0.92rem;
+}
+
+.p-receipt-line:last-child {
+  border-bottom: none;
+}
+
+.p-receipt-line span:first-child {
+  color: rgba(249, 246, 240, 0.55);
+}
+
+@media print {
+  .portal-nav,
+  .p-no-print {
+    display: none !important;
+  }
+  .portal-shell {
+    background: #fff;
+    color: #000;
+  }
+}

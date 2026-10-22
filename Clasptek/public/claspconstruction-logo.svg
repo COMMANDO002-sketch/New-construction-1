@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 180" role="img">
+  <g fill="none" stroke="#d4af37" stroke-width="5" stroke-linejoin="round">
+    <polygon points="88,8 166,52 166,128 88,172 10,128 10,52" />
+    <polygon points="88,25 150,90 88,155 26,90" />
+    <polygon points="88,8 126,90 88,172 50,90" />
+    <polygon points="10,52 88,90 166,52" />
+    <polygon points="10,128 88,90 166,128" />
+  </g>
+  <text x="204" y="91" fill="#f9f6f0" font-family="Georgia, 'Times New Roman', serif" font-size="59" letter-spacing="1">CLASPCONSTRUCTION</text>
+  <text x="208" y="138" fill="#d4af37" font-family="Arial, sans-serif" font-size="16" letter-spacing="6">BUILD. DELIVER. CONNECT.</text>
+</svg>
