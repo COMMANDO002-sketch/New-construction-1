@@ -19,7 +19,7 @@ import {
   usePageTitle,
 } from '../site/ui.jsx'
 import heroImage from '../assets/hero-construction.png'
-import ourStoryImage from '../assets/our-story-home.png'
+import houseSiteImage from '../assets/house-site-03.png'
 import SitePhoto from '../site/SitePhoto.jsx'
 
 const HERO_LINES = [
@@ -190,7 +190,6 @@ export default function Home() {
               viewport={{ once: true, margin: '-60px' }}
               transition={{ duration: 0.6, delay: index * 0.08, ease: luxuryEase }}
             >
-              <span className="core-service-index">0{index + 1}</span>
               <h3>{title}</h3>
               <p>{description}</p>
             </motion.div>
@@ -214,10 +213,9 @@ export default function Home() {
           variants={staggerContainer}
           viewport={{ once: true, margin: '-100px' }}
         >
-          {SERVICE_CATEGORIES.map(({ number, id, title, summary, items, status }) => (
+          {SERVICE_CATEGORIES.map(({ id, title, summary, items, status }) => (
             <motion.article className="home-service-card" key={id} variants={fadeUp} whileHover={cardHover}>
               <div className="home-service-topline">
-                <span>{number}</span>
                 <span className="home-service-count">{items.length} SERVICES</span>
               </div>
               <h3>{title}</h3>
@@ -305,7 +303,6 @@ export default function Home() {
                 viewport={{ once: true, margin: '-60px' }}
                 transition={{ duration: 0.6, delay: index * 0.08, ease: luxuryEase }}
               >
-                <span>0{index + 1}</span>
                 <p>{item}</p>
               </motion.div>
             ))}
@@ -322,7 +319,7 @@ export default function Home() {
         <div className="home-approach-image">
           <img
             className="reveal-image"
-            src={ourStoryImage}
+            src={houseSiteImage}
             alt="Building works in progress on an active construction site"
             loading="lazy"
           />

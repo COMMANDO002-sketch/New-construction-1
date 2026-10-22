@@ -38,9 +38,8 @@ export default function RealEstate() {
           variants={staggerContainer}
           viewport={{ once: true, margin: '-80px' }}
         >
-          {PROPERTY_SERVICES.items.map(({ name, description }, index) => (
+          {PROPERTY_SERVICES.items.map(({ name, description }) => (
             <motion.article className="re-service-card" key={name} variants={fadeUp}>
-              <span className="re-service-index">0{index + 1}</span>
               <h3>{name}</h3>
               <p>{description}</p>
               <Link
@@ -73,11 +72,12 @@ export default function RealEstate() {
           variants={staggerContainer}
           viewport={{ once: true, margin: '-80px' }}
         >
-          {PROPERTY_TYPES.map(({ number, title, description }, index) => (
+          {PROPERTY_TYPES.map(({ title, description }, index) => (
             <motion.article className="re-type-card" key={title} variants={fadeUp}>
-              <SitePhoto imageIndex={[0, 1, 3][index]} />
+              <SitePhoto
+                imageIndex={[0, 1, 3][index]}
+              />
               <div className="re-type-body">
-                <span className="re-type-index">{number}</span>
                 <h3>{title}</h3>
                 <p>{description}</p>
                 <Link className="text-link" to={`/contact?intent=${CTA.find.intent}`}>

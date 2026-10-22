@@ -6,6 +6,11 @@ import { fadeUp, staggerContainer } from '../animations.js'
 import { CTA, SERVICE_CATEGORIES } from '../site/content.js'
 import SitePhoto, { ImageNote } from '../site/SitePhoto.jsx'
 import { CtaButton, CtaBar, PageHero, usePageTitle } from '../site/ui.jsx'
+import buildingProjectImage from '../assets/construction-services-06.png'
+import landDevelopmentImage from '../assets/construction-services-08.png'
+import boreholeProjectImage from '../assets/construction-services-10.png'
+import civilWorksImage from '../assets/construction-services-09.png'
+import industrialProjectImage from '../assets/construction-services-11.png'
 
 /** Highlights the category matching the current hash, if any. */
 function useActiveCategory() {
@@ -34,25 +39,21 @@ export default function Services() {
       />
 
       <nav className="service-jump section-pad" aria-label="Service categories">
-        {SERVICE_CATEGORIES.map(({ number, id, title }) => (
+        {SERVICE_CATEGORIES.map(({ id, title }) => (
           <a key={id} href={`#${id}`}>
-            <span>{number}</span>
             {title}
           </a>
         ))}
       </nav>
 
       {SERVICE_CATEGORIES.map(
-        ({ number, id, title, summary, items, cta, secondaryCta, status }) => (
+        ({ id, title, summary, items, cta, secondaryCta, status }, index) => (
           <section className="service-block section-pad" id={id} key={id}>
             <div className="service-block-head">
-              <div className="service-block-heading">
-                <span className="service-block-number">{number}</span>
-                <h2 className="reveal-heading">
-                  {title}
-                  {status && <em className="status-chip">{status}</em>}
-                </h2>
-              </div>
+              <h2 className="service-block-heading reveal-heading">
+                {title}
+                {status && <em className="status-chip">{status}</em>}
+              </h2>
               <p className="service-block-summary reveal-copy">{summary}</p>
             </div>
 
@@ -73,7 +74,37 @@ export default function Services() {
               </motion.div>
 
               <aside className="service-block-aside">
-                <SitePhoto imageIndex={index + 1} />
+                <SitePhoto
+                  imageIndex={index + 1}
+                  src={[
+                    buildingProjectImage,
+                    undefined,
+                    landDevelopmentImage,
+                    civilWorksImage,
+                    boreholeProjectImage,
+                    industrialProjectImage,
+                  ][index]}
+                  alt={
+                    [
+                      'Multi-unit residential construction in progress',
+                      undefined,
+                      'Land for sale beside residential construction in progress',
+                      'Civil engineering works including road construction, drainage, bridges and port infrastructure',
+                      'Borehole drilling equipment operating at a construction site',
+                      'Completed residential development with landscaped grounds',
+                    ][index]
+                  }
+                  caption={
+                    [
+                      'Residential building construction',
+                      undefined,
+                      'Land and residential development',
+                      'Road, drainage, bridge and port infrastructure',
+                      'Borehole drilling and water engineering',
+                      'Residential development',
+                    ][index]
+                  }
+                />
                 <div className="service-block-cta">
                   <CtaButton cta={cta} shimmer={cta === CTA.quote} />
                   {secondaryCta && <CtaButton cta={secondaryCta} variant="outline" />}

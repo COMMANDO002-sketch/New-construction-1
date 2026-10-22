@@ -12,7 +12,8 @@ import {
 } from '../site/content.js'
 import SitePhoto from '../site/SitePhoto.jsx'
 import { CtaBar, PageHero, SectionHeading, usePageTitle } from '../site/ui.jsx'
-import ourStoryImage from '../assets/our-story-home.png'
+import houseSiteImage from '../assets/house-site-04.png'
+import specialistSiteImage from '../assets/about-specialist-05.jpg'
 
 export default function About() {
   const prefersReducedMotion = useReducedMotion()
@@ -38,7 +39,7 @@ export default function About() {
         <div className="about-story-image">
           <img
             className="reveal-image"
-            src={ourStoryImage}
+            src={houseSiteImage}
             alt="Building works in progress on an active construction site"
             loading="lazy"
           />
@@ -88,9 +89,8 @@ export default function About() {
           variants={staggerContainer}
           viewport={{ once: true, margin: '-80px' }}
         >
-          {CORE_SERVICES.map(({ title, description }, index) => (
+          {CORE_SERVICES.map(({ title, description }) => (
             <motion.article className="about-core-card" key={title} variants={fadeUp}>
-              <span className="about-core-index">0{index + 1}</span>
               <h3>{title}</h3>
               <p>{description}</p>
             </motion.article>
@@ -145,7 +145,13 @@ export default function About() {
             See partner-led capabilities <ArrowUpRight size={14} />
           </Link>
         </div>
-        <SitePhoto imageIndex={1} className="reveal-image" />
+        <SitePhoto
+          imageIndex={1}
+          className="reveal-image"
+          src={specialistSiteImage}
+          alt="Roofing work underway on a residential construction site"
+          caption="Roofing work at a residential construction site"
+        />
       </section>
 
       <section className="about-categories section-pad">
@@ -157,9 +163,8 @@ export default function About() {
           note="A summary of the six service categories. Full detail sits on the Construction Services page."
         />
         <div className="about-category-list">
-          {SERVICE_CATEGORIES.map(({ number, id, title, items, status }) => (
+          {SERVICE_CATEGORIES.map(({ id, title, items, status }) => (
             <Link className="about-category-row" key={id} to={`/services#${id}`}>
-              <span className="about-category-number">{number}</span>
               <span className="about-category-title">
                 {title}
                 {status && <em className="status-chip">{status}</em>}

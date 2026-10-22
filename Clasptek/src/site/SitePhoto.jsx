@@ -31,16 +31,19 @@ export default function SitePhoto({
   imageIndex = 0,
   className = '',
   showCaption = true,
+  src,
+  alt,
+  caption,
 }) {
   const photo = PHOTOS[((imageIndex % PHOTOS.length) + PHOTOS.length) % PHOTOS.length]
 
   return (
     <figure className={`site-photo-figure ${className}`.trim()}>
-      <img src={photo.src} alt={photo.alt} loading="lazy" />
+      <img src={src ?? photo.src} alt={alt ?? photo.alt} loading="lazy" />
       {showCaption && (
         <figcaption>
-          <strong>{photo.caption}</strong> — illustrative reference photo, not presented as a
-          completed Clasp Construction project.
+          <strong>{caption ?? photo.caption}</strong> — illustrative reference photo, not
+          presented as a completed Clasp Construction project.
         </figcaption>
       )}
     </figure>

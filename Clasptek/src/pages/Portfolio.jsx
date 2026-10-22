@@ -64,14 +64,13 @@ export default function Portfolio() {
           variants={staggerContainer}
           viewport={{ once: true, margin: '-100px' }}
         >
-          {PORTFOLIO_CATEGORIES.map(({ number, title, description, scope }, index) => (
+          {PORTFOLIO_CATEGORIES.map(({ title, description, scope }, index) => (
             <motion.article className="portfolio-card" key={title} variants={fadeUp}>
               <SitePhoto
                 imageIndex={index + 1}
                 showCaption={false}
               />
               <div className="portfolio-card-top">
-                <span className="portfolio-card-number">{number}</span>
                 <span className="portfolio-card-tag">DOCUMENTATION ON REQUEST</span>
               </div>
               <h3>{title}</h3>
@@ -87,7 +86,6 @@ export default function Portfolio() {
             </motion.article>
           ))}
           <motion.article className="portfolio-card portfolio-card-action" variants={fadeUp}>
-            <span className="portfolio-card-number">→</span>
             <h3>Planning something similar?</h3>
             <p className="portfolio-card-description">
               Tell us about the project and we will let you know whether we have relevant
@@ -142,7 +140,6 @@ export default function Portfolio() {
               viewport={{ once: true, margin: '-60px' }}
               transition={{ duration: 0.6, delay: index * 0.07 }}
             >
-              <span>0{index + 1}</span>
               <h3>{step.title}</h3>
               <p>{step.description}</p>
             </motion.div>
