@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { motion, useReducedMotion } from 'motion/react'
 import { ArrowRight, ArrowUpRight, MapPin, Phone } from 'lucide-react'
@@ -20,7 +20,21 @@ import {
 } from '../site/ui.jsx'
 import heroImage from '../assets/hero-construction.png'
 import houseSiteImage from '../assets/house-site-03.png'
+import houseSiteImageTwo from '../assets/house-site-04.png'
+import houseSiteImageThree from '../assets/house-site-05.png'
+import propertyHomeImage from '../assets/property-home.png'
 import SitePhoto from '../site/SitePhoto.jsx'
+
+const HERO_SLIDES = [
+  heroImage,
+  houseSiteImage,
+  houseSiteImageTwo,
+  houseSiteImageThree,
+  propertyHomeImage,
+]
+
+const HERO_SLIDE_DURATIONS = [5000, 5000, 5000, 5000, 10000]
+const HERO_CROSSFADE_DURATION = 1400
 
 const HERO_LINES = [
   'Building Spaces.',
@@ -60,14 +74,6 @@ function useHeroIntro() {
           .fromTo('.hero-actions .button', { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.5, stagger: 0.1 }, '+=0.2')
           .fromTo('.hero-bottomline', { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.5 }, '-=0.2')
 
-        gsap.to('.hero-image-frame', {
-          scale: 1.15,
-          duration: 10,
-          ease: 'none',
-          delay: 1.1,
-          repeat: -1,
-          yoyo: true,
-        })
       }, heroRef)
     }
 
@@ -84,6 +90,25 @@ function useHeroIntro() {
 export default function Home() {
   const prefersReducedMotion = useReducedMotion()
   const heroRef = useHeroIntro()
+  const [activeHeroSlide, setActiveHeroSlide] = useState(0)
+  const [previousHeroSlide, setPreviousHeroSlide] = useState(null)
+
+  useEffect(() => {
+    if (prefersReducedMotion) return undefined
+
+    const nextHeroSlide = (activeHeroSlide + 1) % HERO_SLIDES.length
+    const imagePreloader = new window.Image()
+    imagePreloader.decoding = 'async'
+    imagePreloader.src = HERO_SLIDES[nextHeroSlide].image
+
+    const timer = window.setTimeout(() => {
+      setPreviousHeroSlide(activeHeroSlide)
+      setActiveHeroSlide(nextHeroSlide)
+    }, HERO_SLIDE_DURATIONS[activeHeroSlide])
+
+    return () => window.clearTimeout(timer)
+  }, [activeHeroSlide, prefersReducedMotion])
+
   usePageTitle('Building Spaces. Delivering Projects. Connecting Property Opportunities.')
 
   return (
@@ -91,12 +116,32 @@ export default function Home() {
       {/* ---------------------------------------------------------------- HERO */}
       <section className="hero-section" id="home" ref={heroRef}>
         <div className="hero-image-frame">
-          <img
-            className="hero-image"
-            src={heroImage}
-            alt="Residential building under construction on an active site"
-            fetchPriority="high"
-          />
+          {HERO_SLIDES.map((image, index) => {
+            const isActive = index === activeHeroSlide
+            const isPrevious = !prefersReducedMotion && index === previousHeroSlide
+
+            if (!isActive && !isPrevious) return null
+
+            return (
+              <img
+                key={image}
+                className={`hero-image hero-slide-image ${isActive ? 'is-active' : 'is-previous'}`}
+                src={image}
+                alt=""
+                aria-hidden="true"
+                fetchPriority={index === 0 ? 'high' : undefined}
+                decoding="async"
+                style={{
+                  '--hero-zoom-duration': `${HERO_SLIDE_DURATIONS[index] / 1000 + HERO_CROSSFADE_DURATION / 1000}s`,
+                }}
+                onTransitionEnd={(event) => {
+                  if (event.propertyName === 'opacity' && isPrevious) {
+                    setPreviousHeroSlide(null)
+                  }
+                }}
+              />
+            )
+          })}
         </div>
         <div className="hero-shade" />
         <span className="hero-reveal-line" aria-hidden="true" />

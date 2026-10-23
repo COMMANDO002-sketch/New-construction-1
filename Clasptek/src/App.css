@@ -160,10 +160,37 @@
 }
 
 .hero-image {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center 53%;
+}
+
+.hero-slide-image {
+  opacity: 0;
+  transform: scale(1.02);
+  transition: opacity 1.4s ease-in-out;
+  will-change: opacity, transform;
+}
+
+.hero-slide-image.is-active {
+  opacity: 1;
+}
+
+.hero-slide-image.is-active,
+.hero-slide-image.is-previous {
+  animation: hero-cinematic-zoom var(--hero-zoom-duration) linear both;
+}
+
+@keyframes hero-cinematic-zoom {
+  from {
+    transform: scale(1.02);
+  }
+  to {
+    transform: scale(1.08);
+  }
 }
 
 .hero-shade {
@@ -1729,6 +1756,12 @@
 @media (prefers-reduced-motion: reduce) {
   .hero-reveal-line {
     transform: scaleX(1);
+  }
+
+  .hero-slide-image {
+    animation: none;
+    transform: none;
+    transition: none;
   }
 
   *,

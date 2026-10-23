@@ -5,6 +5,7 @@ import { fadeUp, staggerContainer } from '../animations.js'
 import { CTA, PROPERTY_TYPES, SERVICE_CATEGORIES } from '../site/content.js'
 import SitePhoto, { ImageNote } from '../site/SitePhoto.jsx'
 import { CheckList, CtaButton, CtaBar, PageHero, SectionHeading, usePageTitle } from '../site/ui.jsx'
+import PropertyTabs from '../components/PropertyTabs.jsx'
 
 const PROPERTY_SERVICES = SERVICE_CATEGORIES.find(({ id }) => id === 'real-estate')
 
@@ -22,6 +23,8 @@ export default function RealEstate() {
         <CtaButton cta={CTA.find} shimmer />
         <CtaButton cta={CTA.list} variant="outline" />
       </PageHero>
+
+      <PropertyTabs properties={[]} />
 
       <section className="re-services section-pad">
         <SectionHeading
