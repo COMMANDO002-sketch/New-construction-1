@@ -231,13 +231,13 @@ export default function PaymentsTab() {
                 <td>{formatDate(payment.paid_at || payment.created_at)}</td>
                 <td>
                   {payment.tenant_name}
-                  <div className="p-muted" style={{ fontSize: '0.78rem' }}>
+                  <div className="p-muted" style={{ fontSize: '14px' }}>
                     {payment.block ? `Block ${payment.block} — ${payment.house_no}` : 'no house'}
                   </div>
                 </td>
                 <td>
                   {payment.description}
-                  <div className="p-muted" style={{ fontSize: '0.78rem' }}>
+                  <div className="p-muted" style={{ fontSize: '14px' }}>
                     {(payment.channel || '—').replace(/_/g, ' ')}
                   </div>
                 </td>
@@ -250,7 +250,7 @@ export default function PaymentsTab() {
                   {payment.status === 'pending' && (
                     <select
                       className="p-select"
-                      style={{ width: 'auto', padding: '0.3rem 0.5rem', fontSize: '0.78rem' }}
+                      style={{ width: 'auto', padding: '0.3rem 0.5rem', fontSize: '14px' }}
                       defaultValue="bank_transfer"
                       onChange={(e) => confirmPayment(payment.id, e.target.value)}
                     >

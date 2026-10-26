@@ -123,7 +123,7 @@ export default function BillsTab() {
             <div className="p-row" style={{ justifyContent: 'space-between' }}>
               <div>
                 <strong>{bill.name}</strong>
-                <div className="p-muted" style={{ fontSize: '0.8rem' }}>
+                <div className="p-muted" style={{ fontSize: '14px' }}>
                   {bill.description || '—'} · {bill.frequency.replace('_', ' ')}
                 </div>
               </div>

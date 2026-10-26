@@ -3,7 +3,7 @@ import { motion } from 'motion/react'
 import { ArrowUpRight } from 'lucide-react'
 import { fadeUp, staggerContainer } from '../animations.js'
 import { CTA, PROPERTY_TYPES, SERVICE_CATEGORIES } from '../site/content.js'
-import SitePhoto, { ImageNote } from '../site/SitePhoto.jsx'
+import SitePhoto from '../site/SitePhoto.jsx'
 import { CheckList, CtaButton, CtaBar, PageHero, SectionHeading, usePageTitle } from '../site/ui.jsx'
 import PropertyTabs from '../components/PropertyTabs.jsx'
 
@@ -66,7 +66,6 @@ export default function RealEstate() {
           eyebrow="WHAT WE MARKET"
           heading="Property types"
           accent="we handle."
-          note="Illustrative categories only. Live listings, prices and availability are confirmed directly with our team."
         />
         <motion.div
           className="re-type-grid"
@@ -123,8 +122,6 @@ export default function RealEstate() {
         </div>
         <SitePhoto imageIndex={2} className="reveal-image" />
       </section>
-
-      <ImageNote />
 
       <CtaBar
         title="Buying, selling or letting?"

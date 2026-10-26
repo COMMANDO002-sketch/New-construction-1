@@ -223,7 +223,7 @@ export default function ManageTab() {
                 <td>
                   <select
                     className="p-select"
-                    style={{ width: 'auto', minWidth: 170, padding: '0.3rem 0.5rem', fontSize: '0.8rem' }}
+                    style={{ width: 'auto', minWidth: 170, padding: '0.3rem 0.5rem', fontSize: '14px' }}
                     value={house.tenant_id || ''}
                     onChange={(e) => assignTenant(house.id, e.target.value)}
                   >
@@ -243,7 +243,7 @@ export default function ManageTab() {
                 <td>
                   <input
                     className="p-input"
-                    style={{ width: 130, padding: '0.3rem 0.6rem', fontSize: '0.85rem' }}
+                    style={{ width: 130, padding: '0.3rem 0.6rem', fontSize: '14px' }}
                     type="number"
                     min="0"
                     defaultValue={Number(house.rent_amount)}

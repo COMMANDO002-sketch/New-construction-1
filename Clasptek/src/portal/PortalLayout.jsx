@@ -51,7 +51,7 @@ export default function PortalLayout() {
         </div>
 
         <div className="portal-nav-right">
-          <span className="p-muted p-no-print" style={{ fontSize: '0.82rem' }}>
+          <span className="p-muted p-no-print" style={{ fontSize: '14px' }}>
             {firstName}
           </span>
           <button

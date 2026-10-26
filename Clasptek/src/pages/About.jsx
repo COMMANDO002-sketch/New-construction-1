@@ -6,7 +6,6 @@ import {
   APPROACH,
   COMPANY,
   CORE_SERVICES,
-  IMAGE_NOTE,
   SERVICE_CATEGORIES,
   VALUES,
 } from '../site/content.js'
@@ -43,7 +42,6 @@ export default function About() {
             alt="Building works in progress on an active construction site"
             loading="lazy"
           />
-          <span className="about-story-label">ILLUSTRATIVE SITE PHOTOGRAPH</span>
         </div>
         <div className="about-story-copy">
           <p className="eyebrow"><span className="eyebrow-mark" />WHAT WE DO</p>
@@ -181,7 +179,6 @@ export default function About() {
         note="Tell us about the project and we will let you know honestly how we can help."
       />
 
-      <p className="image-global-note">{IMAGE_NOTE}</p>
     </>
   )
 }

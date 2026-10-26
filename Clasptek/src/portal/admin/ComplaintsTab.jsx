@@ -69,7 +69,7 @@ export default function ComplaintsTab() {
           <div className="p-row" style={{ justifyContent: 'space-between' }}>
             <div>
               <strong>{complaint.subject}</strong>
-              <div className="p-muted" style={{ fontSize: '0.82rem' }}>
+              <div className="p-muted" style={{ fontSize: '14px' }}>
                 {complaint.tenant_name} · {complaint.tenant_phone} ·{' '}
                 {complaint.house_no ? `Block ${complaint.block} ${complaint.house_no}` : 'no house'} ·{' '}
                 {complaint.category} · {formatDate(complaint.created_at)}
@@ -81,7 +81,7 @@ export default function ComplaintsTab() {
           <div className="p-row" style={{ marginTop: '0.7rem' }}>
             <select
               className="p-select"
-              style={{ width: 'auto', padding: '0.35rem 0.6rem', fontSize: '0.82rem' }}
+              style={{ width: 'auto', padding: '0.35rem 0.6rem', fontSize: '14px' }}
               value={complaint.status}
               onChange={(e) => changeStatus(complaint.id, e.target.value)}
             >
@@ -98,17 +98,17 @@ export default function ComplaintsTab() {
 
           {expanded === complaint.id && (
             <div style={{ marginTop: '0.8rem', borderTop: '1px solid #2b2b2b', paddingTop: '0.7rem' }}>
-              <p style={{ fontSize: '0.92rem', whiteSpace: 'pre-wrap' }}>{complaint.body}</p>
+              <p style={{ fontSize: '14px', whiteSpace: 'pre-wrap' }}>{complaint.body}</p>
               {(replies[complaint.id] || []).map((reply) => (
                 <div key={reply.id} style={{ marginBottom: '0.55rem' }}>
                   <div className="p-row" style={{ gap: '0.5rem' }}>
-                    <strong style={{ fontSize: '0.85rem' }}>{reply.full_name}</strong>
+                    <strong style={{ fontSize: '14px' }}>{reply.full_name}</strong>
                     <span className="pill neutral">{reply.role.replace('_', ' ')}</span>
-                    <span className="p-muted" style={{ fontSize: '0.75rem' }}>
+                    <span className="p-muted" style={{ fontSize: '14px' }}>
                       {formatDate(reply.created_at)}
                     </span>
                   </div>
-                  <p style={{ margin: '0.15rem 0 0', fontSize: '0.9rem' }}>{reply.body}</p>
+                  <p style={{ margin: '0.15rem 0 0', fontSize: '14px' }}>{reply.body}</p>
                 </div>
               ))}
               <div className="p-row" style={{ marginTop: '0.6rem' }}>

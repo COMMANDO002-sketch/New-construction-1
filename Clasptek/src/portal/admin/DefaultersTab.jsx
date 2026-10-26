@@ -93,13 +93,13 @@ export default function DefaultersTab() {
                       </td>
                       <td>
                         {row.tenant_name}
-                        <div className="p-muted" style={{ fontSize: '0.78rem' }}>
+                        <div className="p-muted" style={{ fontSize: '14px' }}>
                           {row.tenant_phone}
                         </div>
                       </td>
                       <td>
                         {row.landlord_name || '—'}
-                        <div className="p-muted" style={{ fontSize: '0.78rem' }}>
+                        <div className="p-muted" style={{ fontSize: '14px' }}>
                           {row.landlord_phone || ''}
                         </div>
                       </td>

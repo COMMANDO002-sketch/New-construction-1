@@ -67,7 +67,7 @@ export default function Notices() {
                 <StatusPill status={notice.type} />
                 {!notice.read && <span className="pill gold">New</span>}
               </div>
-              <span className="p-muted" style={{ fontSize: '0.8rem' }}>
+              <span className="p-muted" style={{ fontSize: '14px' }}>
                 {formatDate(notice.publish_at)}
               </span>
             </div>
@@ -97,7 +97,7 @@ export default function Notices() {
 
             {isOpen && (
               <div style={{ marginTop: '0.6rem' }}>
-                <p style={{ fontSize: '0.95rem', lineHeight: 1.65, whiteSpace: 'pre-wrap' }}>
+                <p style={{ fontSize: '14px', lineHeight: 1.65, whiteSpace: 'pre-wrap' }}>
                   {notice.body}
                 </p>
                 {agenda.length > 0 && (

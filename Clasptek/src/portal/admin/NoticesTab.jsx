@@ -171,7 +171,7 @@ export default function NoticesTab() {
           />
         </Field>
 
-        <label className="p-row" style={{ marginBottom: '1rem', fontSize: '0.9rem', cursor: 'pointer' }}>
+        <label className="p-row" style={{ marginBottom: '1rem', fontSize: '14px', cursor: 'pointer' }}>
           <input type="checkbox" checked={form.notify} onChange={update('notify')} />
           Send SMS push to all tenants on publish
         </label>
@@ -203,7 +203,7 @@ export default function NoticesTab() {
                   <span className="pill pending">Draft</span>
                 )}
               </div>
-              <span className="p-muted" style={{ fontSize: '0.78rem' }}>
+              <span className="p-muted" style={{ fontSize: '14px' }}>
                 {formatDate(item.created_at)}
               </span>
             </div>
@@ -215,7 +215,7 @@ export default function NoticesTab() {
             </p>
 
             {item.is_published && (
-              <div className="p-row" style={{ fontSize: '0.82rem', marginBottom: '0.6rem' }}>
+              <div className="p-row" style={{ fontSize: '14px', marginBottom: '0.6rem' }}>
                 <span className="pill neutral">Read: {item.reads} / {item.audience}</span>
                 {item.event_at && (
                   <span className="p-muted">📅 {formatDate(item.event_at)} {item.venue ? `· ${item.venue}` : ''}</span>

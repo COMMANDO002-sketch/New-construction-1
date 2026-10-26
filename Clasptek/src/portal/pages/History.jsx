@@ -63,7 +63,7 @@ export default function History() {
                   <td>{formatDate(payment.paid_at || payment.created_at)}</td>
                   <td>
                     {payment.description}
-                    <div className="p-muted" style={{ fontSize: '0.78rem' }}>
+                    <div className="p-muted" style={{ fontSize: '14px' }}>
                       {(payment.channel || payment.category).replace(/_/g, ' ')}
                     </div>
                   </td>

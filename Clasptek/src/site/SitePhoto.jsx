@@ -2,7 +2,6 @@ import staircaseImage from '../assets/staircase-interior.jpg'
 import constructionImage from '../assets/house-construction.jpg'
 import kitchenImage from '../assets/kitchen-interior.jpg'
 import exteriorImage from '../assets/property-home.png'
-import { IMAGE_NOTE } from './content.js'
 
 const PHOTOS = [
   {
@@ -42,14 +41,9 @@ export default function SitePhoto({
       <img src={src ?? photo.src} alt={alt ?? photo.alt} loading="lazy" />
       {showCaption && (
         <figcaption>
-          <strong>{caption ?? photo.caption}</strong> — illustrative reference photo, not
-          presented as a completed Clasp Construction project.
+          <strong>{caption ?? photo.caption}</strong>
         </figcaption>
       )}
     </figure>
   )
-}
-
-export function ImageNote() {
-  return <p className="image-global-note">{IMAGE_NOTE}</p>
 }

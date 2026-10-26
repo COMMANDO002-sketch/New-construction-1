@@ -4,7 +4,7 @@ import { motion } from 'motion/react'
 import { ArrowUpRight } from 'lucide-react'
 import { fadeUp, staggerContainer } from '../animations.js'
 import { CTA, SERVICE_CATEGORIES } from '../site/content.js'
-import SitePhoto, { ImageNote } from '../site/SitePhoto.jsx'
+import SitePhoto from '../site/SitePhoto.jsx'
 import { CtaButton, CtaBar, PageHero, usePageTitle } from '../site/ui.jsx'
 import buildingProjectImage from '../assets/construction-services-06.png'
 import landDevelopmentImage from '../assets/construction-services-08.png'
@@ -121,8 +121,6 @@ export default function Services() {
           </section>
         ),
       )}
-
-      <ImageNote />
 
       <CtaBar
         title="Not sure which service you need?"

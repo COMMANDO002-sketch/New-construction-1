@@ -366,6 +366,3 @@ export const APPROACH = [
 ]
 
 export const VALUES = ['Quality', 'Integrity', 'Timely Delivery']
-
-export const IMAGE_NOTE =
-  'Photographs on this site are illustrative reference images. They are not presented as verified or completed Clasp Construction Company Limited projects.'

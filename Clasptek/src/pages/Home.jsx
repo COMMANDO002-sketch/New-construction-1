@@ -10,7 +10,6 @@ import {
   staggerContainer,
 } from '../animations.js'
 import { APPROACH, CTA, COMPANY, CORE_SERVICES, SERVICE_CATEGORIES, VALUES } from '../site/content.js'
-import { ImageNote } from '../site/SitePhoto.jsx'
 import {
   CheckList,
   CtaBar,
@@ -23,6 +22,7 @@ import houseSiteImage from '../assets/house-site-03.png'
 import houseSiteImageTwo from '../assets/house-site-04.png'
 import houseSiteImageThree from '../assets/house-site-05.png'
 import propertyHomeImage from '../assets/property-home.png'
+import commercialHubImage from '../assets/commercial-hub-evening.png'
 import SitePhoto from '../site/SitePhoto.jsx'
 
 const HERO_SLIDES = [
@@ -31,9 +31,10 @@ const HERO_SLIDES = [
   houseSiteImageTwo,
   houseSiteImageThree,
   propertyHomeImage,
+  commercialHubImage,
 ]
 
-const HERO_SLIDE_DURATIONS = [5000, 5000, 5000, 5000, 10000]
+const HERO_SLIDE_DURATIONS = [5000, 5000, 5000, 5000, 10000, 8000]
 const HERO_CROSSFADE_DURATION = 1400
 
 const HERO_LINES = [
@@ -197,7 +198,6 @@ export default function Home() {
             </a>
           </div>
         </div>
-        <span className="hero-image-note">ILLUSTRATIVE SITE PHOTOGRAPH</span>
       </section>
 
       {/* -------------------------------------------------------------- INTRO */}
@@ -368,9 +368,6 @@ export default function Home() {
             alt="Building works in progress on an active construction site"
             loading="lazy"
           />
-          <span className="home-approach-label">
-            ILLUSTRATIVE SITE PHOTOGRAPH <i /> {COMPANY.shortName.toUpperCase()}
-          </span>
         </div>
         <div className="home-approach-copy">
           <p className="eyebrow"><span className="eyebrow-mark" />HOW WE WORK</p>
@@ -406,8 +403,6 @@ export default function Home() {
         title="Tell us what you need."
         note="Choose the option that fits and we will come back to you with the right person and next steps."
       />
-
-      <ImageNote />
 
       {/* ------------------------------------------------------------ CONTACT */}
       <section className="home-contact section-pad" id="contact">

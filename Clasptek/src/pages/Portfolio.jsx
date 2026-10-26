@@ -3,7 +3,7 @@ import { motion, useReducedMotion } from 'motion/react'
 import { ArrowUpRight, FileText } from 'lucide-react'
 import { fadeUp, staggerContainer } from '../animations.js'
 import { CTA, COMPANY, PORTFOLIO_CATEGORIES } from '../site/content.js'
-import SitePhoto, { ImageNote } from '../site/SitePhoto.jsx'
+import SitePhoto from '../site/SitePhoto.jsx'
 import { CtaButton, CtaBar, PageHero, SectionHeading, usePageTitle } from '../site/ui.jsx'
 
 export default function Portfolio() {
@@ -35,8 +35,7 @@ export default function Portfolio() {
           <p className="reveal-copy">
             {COMPANY.legalName} does not publish project records, client names, testimonials,
             certifications or professional registrations that have not been confirmed and
-            verified. Photographs on this site are illustrative reference images — they are not
-            presented as completed {COMPANY.shortName} projects.
+            verified.
           </p>
           <p className="reveal-copy">
             If you are evaluating us for a project, ask us directly. We will share relevant
@@ -146,8 +145,6 @@ export default function Portfolio() {
           ))}
         </div>
       </section>
-
-      <ImageNote />
 
       <CtaBar
         title="Want to see relevant work?"

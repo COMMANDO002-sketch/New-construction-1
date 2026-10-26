@@ -140,18 +140,18 @@ export default function Complaints() {
 
               {expanded === complaint.id && (
                 <div style={{ marginTop: '0.9rem' }}>
-                  <p style={{ fontSize: '0.92rem', whiteSpace: 'pre-wrap' }}>{complaint.body}</p>
+                  <p style={{ fontSize: '14px', whiteSpace: 'pre-wrap' }}>{complaint.body}</p>
                   <div style={{ borderTop: '1px solid #2b2b2b', paddingTop: '0.7rem' }}>
                     {(replies[complaint.id] || []).map((reply) => (
                       <div key={reply.id} style={{ marginBottom: '0.6rem' }}>
                         <div className="p-row" style={{ gap: '0.5rem' }}>
-                          <strong style={{ fontSize: '0.85rem' }}>{reply.full_name}</strong>
+                          <strong style={{ fontSize: '14px' }}>{reply.full_name}</strong>
                           <span className="pill neutral">{reply.role.replace('_', ' ')}</span>
-                          <span className="p-muted" style={{ fontSize: '0.75rem' }}>
+                          <span className="p-muted" style={{ fontSize: '14px' }}>
                             {formatDate(reply.created_at)}
                           </span>
                         </div>
-                        <p style={{ margin: '0.2rem 0 0', fontSize: '0.9rem' }}>{reply.body}</p>
+                        <p style={{ margin: '0.2rem 0 0', fontSize: '14px' }}>{reply.body}</p>
                       </div>
                     ))}
                     {(replies[complaint.id] || []).length === 0 && (

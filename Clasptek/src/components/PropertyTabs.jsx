@@ -34,7 +34,7 @@ function PropertyCard({ property }) {
       )}
       <div className="p-5">
         {typeLabel && (
-          <span className="inline-flex rounded-full bg-neutral-100 px-3 py-1 text-xs font-medium capitalize text-neutral-700">
+          <span className="inline-flex rounded-full bg-neutral-100 px-3 py-1 text-sm font-medium capitalize text-neutral-700">
             {typeLabel}
           </span>
         )}
@@ -62,7 +62,7 @@ export default function PropertyTabs({ properties = [] }) {
     <section className="bg-white px-5 py-16 text-neutral-900 sm:px-8 sm:py-20 lg:px-12">
       <div className="mx-auto max-w-7xl">
         <div className="mb-8 max-w-2xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-neutral-500">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-neutral-500">
             Find your next place
           </p>
           <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
